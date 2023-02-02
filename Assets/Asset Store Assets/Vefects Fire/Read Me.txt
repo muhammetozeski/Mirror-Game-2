@@ -1,0 +1,1 @@
+I sent prefabs, textures, audios and other stuffs to main game folder and grouped them.

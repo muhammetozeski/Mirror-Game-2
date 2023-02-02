@@ -1,0 +1,5 @@
+Environments : IDamageable -> increasehealth(float), void PushEffect(int impulse, V3 dir) OnDeath(Action)
+
+{
+
+}
