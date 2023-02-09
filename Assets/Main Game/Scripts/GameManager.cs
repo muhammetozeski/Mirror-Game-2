@@ -11,22 +11,25 @@ public enum Layers
     Reflectable = 3,
     Damageable = 6,
 }
+/// <summary>
+/// This class is instantiated befor all other monobehaviors created by game developers.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     //TODO: (turkish) game manager'i singleton olarak kullanmamýzýn pek bir mantýðý yok ve çok sorun çýkýyor bu þekilde. bunu obje olarak kullanalým
     public static GameManager Instance { get; private set; }
 
-    /// <summary>
-    /// TODO: use this as object instead of static
-    /// </summary>
+    [Header("Important instances")]
     public InputManager inputManager;
     public Transform Player;
     public PlayerMovingController playerMovingController;
 
+    [Header("Object Pools")]
+    public ObjectPoolingSystem OPFireVFX;
 
     private void Awake()
     {
-        if (!Player || !playerMovingController || !inputManager)
+        if ( ! (Player && inputManager && playerMovingController && OPFireVFX) )
         {
             Debug.LogError("Null object in Game Manager!");
         }

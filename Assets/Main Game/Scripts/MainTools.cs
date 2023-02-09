@@ -257,4 +257,23 @@ public static class MainTools
         if (eulerAngle < max) return max;
         return eulerAngle;
     }
+
+    //TODO: write more detailed summary and try to merge the other overload
+    /// <summary>
+    /// checks the object and warns with Debug.LogError if it's null.
+    /// </summary>
+    public static bool CheckNull<T>(T _object, bool warn = true)
+    {
+        bool result = _object != null;
+        if (!result && warn)
+            Debug.LogError(_object.ToString() + " is null");
+        return result;
+    }
+    public static bool CheckNull(string _object, bool warn = true)
+    {
+        bool result = !string.IsNullOrEmpty(_object);
+        if (!result && warn)
+            Debug.LogError(_object.ToString() + " is null");
+        return result;
+    }
 }
