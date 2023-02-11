@@ -5,6 +5,12 @@ using UnityEngine;
 
 public interface IDamageable
 {
+
+    public float Health
+    {
+        get;
+        protected set;
+    }
     /// <summary>
     /// enter a positive value to increase health and run increase health animation
     /// <br></br>
@@ -13,11 +19,10 @@ public interface IDamageable
     /// enter 0 or don't enter anything to only get health as float
     /// </summary>
     /// <returns>Health of the object</returns>
-    public float IncreaseHealth(float health);
+    public float IncreaseHealth(float Health, Vector3? HitLocation = null);
 
     public void PushEffect(float impulse, Vector3 ToDirection);
 
     delegate void _OnDeath();
-    protected _OnDeath onDeath { get; set; }
-    public _OnDeath OnDeath { set { onDeath = value; } }
+    public _OnDeath OnDeath { protected get; set; }
 }

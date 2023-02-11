@@ -18,13 +18,14 @@ public class LaserMaker : MonoBehaviour
 
     #region delegate DamageableIncreaseHealth
     public delegate float _DamageableIncreaseHealth();
-    private _DamageableIncreaseHealth damageableIncreaseHealth;
+    private _DamageableIncreaseHealth damageableIncreaseHealth = () => { return 0; };
     /// <summary>
-    /// you can only set one delegate. don't use "+=" operator.
+    /// you should return the value you want to increase health of the object. 
+    /// return a negative value to decrease health.
     /// </summary>
-    public _DamageableIncreaseHealth DamageableIncreaseHealth 
+    public _DamageableIncreaseHealth OnLaserHitDamageable 
     { 
-        private get {
+        get {
             return damageableIncreaseHealth;
          } 
         set {
@@ -78,11 +79,12 @@ public class LaserMaker : MonoBehaviour
                             IDamageable damageable;
                             if(hit.transform.TryGetComponent<IDamageable>(out damageable))
                             {
-                                damageable.IncreaseHealth(DamageableIncreaseHealth());
+                                print(hit.transform.gameObject.layer);
+                                damageable.IncreaseHealth(OnLaserHitDamageable());
                             }
                         }
 
-                        //Ray hitted something and won't get reflect again
+                        //Ray hitted something not reflectable and won't get reflect again
                         break;
                     }
                     

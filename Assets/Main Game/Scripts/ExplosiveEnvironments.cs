@@ -2,16 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* //TODO: think about deleting this script
 public class ExplosiveEnvironments : MonoBehaviour, IDamageable
 {
     float Health = 100;
 
 
     IDamageable._OnDeath _onDeath;
-    IDamageable._OnDeath IDamageable.onDeath { get { return _onDeath; } set => _onDeath = value; }
+    IDamageable._OnDeath IDamageable.OnDeath { get { return _onDeath; } set => _onDeath = value; }
 
-    float IDamageable.IncreaseHealth(float health = 0)
+    float IDamageable.IncreaseHealth(float health = 0, Vector3? HitLocation = null)
     {
         Health += health;
         return Health;
@@ -32,3 +32,4 @@ public class ExplosiveEnvironments : MonoBehaviour, IDamageable
     {
     }
 }
+*/

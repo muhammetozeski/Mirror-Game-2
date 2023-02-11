@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5245394490814720876}
+  - component: {fileID: 1350889068}
   - component: {fileID: 3859695658952970586}
   - component: {fileID: 7398549610211945891}
   - component: {fileID: 5024011234943666735}
   - component: {fileID: 5823469939067762236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Extinguisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,8 +35,26 @@ Transform:
   m_Children:
   - {fileID: 4269760745899172925}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350889068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119854835688774015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdac7618a2364df4cad54e34a8722895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 7398549610211945891}
+  EmissiveColor: {r: 1, g: 0, b: 0, a: 0}
+  EmissionMultiplierIncreaser: 0.1
+  EmissionMultiplierDecreaser: 0.1
+  StartCooling: 0.5
+  Health: 0
 --- !u!33 &3859695658952970586
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64,14 +83,14 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f412f828842049469cab1389415984b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.5
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
