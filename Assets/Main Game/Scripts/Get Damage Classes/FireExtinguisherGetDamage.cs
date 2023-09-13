@@ -56,7 +56,7 @@ public class FireExtinguisherGetDamage : MonoBehaviour, IDamageable
 
     public void PushEffect(float impulse, Vector3 ToDirection)
     {
-        //no push
+        //no push for now
     }
 
     // Start is called before the first frame update

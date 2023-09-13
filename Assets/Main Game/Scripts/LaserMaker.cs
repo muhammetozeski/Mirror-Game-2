@@ -18,7 +18,7 @@ public class LaserMaker : MonoBehaviour
 
     #region delegate DamageableIncreaseHealth
     public delegate float _DamageableIncreaseHealth();
-    private _DamageableIncreaseHealth damageableIncreaseHealth = () => { return 0; };
+    private _DamageableIncreaseHealth damageableIncreaseHealth = () => { return -1; };
     /// <summary>
     /// you should return the value you want to increase health of the object. 
     /// return a negative value to decrease health.

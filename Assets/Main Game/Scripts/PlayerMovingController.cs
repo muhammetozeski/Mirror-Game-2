@@ -45,7 +45,7 @@ public class PlayerMovingController : MonoBehaviour
     private void Update()
     {
         //debug purpose:
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             letToRotate = false;
         }
