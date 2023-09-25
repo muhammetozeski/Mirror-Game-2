@@ -21,6 +21,10 @@ public class SimpleExplosionController : MonoBehaviour
         OPFireVFX = GameManager.Instance.OPFireVFX;
         MainTools.CheckNull(particleSystem);
     }
+
+    /// <summary>
+    /// collision and collision call back must be open for firing up this function
+    /// </summary>
     private void OnParticleCollision(GameObject other)
     {
         List<ParticleCollisionEvent> particleCollisionEvents = new List<ParticleCollisionEvent>();
@@ -30,7 +34,7 @@ public class SimpleExplosionController : MonoBehaviour
             Transform Fire = OPFireVFX.GetPool().transform;
             Fire.gameObject.SetActive(false); //otherwise particles leave footprints
             Fire.position = collision.intersection;
-            //Fire.rotation = Quaternion.FromToRotation(Vector3.up, collision.normal);
+            Fire.rotation = Quaternion.FromToRotation(Vector3.up, collision.normal);
             Fire.gameObject.SetActive(true);
         }
     }

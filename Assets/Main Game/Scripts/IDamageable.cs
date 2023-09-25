@@ -23,6 +23,5 @@ public interface IDamageable
 
     public void PushEffect(float impulse, Vector3 ToDirection);
 
-    delegate void _OnDeath();
-    public _OnDeath OnDeath { protected get; set; }
+    public Action OnDeath { protected get; set; }
 }

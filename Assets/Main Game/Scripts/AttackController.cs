@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
-    [SerializeField] float Damage;
+    [SerializeField, Range(-30, -0.1f)] float Damage;
     [SerializeField] LaserMaker laser;
-    private void Start()
-    {
-        laser.OnLaserHitDamageable = () => {
-            print("Attacking!");
-            return Damage; 
-        };    
-    }
+
 
 }

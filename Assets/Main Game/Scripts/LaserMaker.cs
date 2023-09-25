@@ -16,23 +16,11 @@ public class LaserMaker : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
-    #region delegate DamageableIncreaseHealth
-    public delegate float _DamageableIncreaseHealth();
-    private _DamageableIncreaseHealth damageableIncreaseHealth = () => { return -1; };
     /// <summary>
-    /// you should return the value you want to increase health of the object. 
-    /// return a negative value to decrease health.
+    /// you should set the value you want to increase health of the object. 
+    /// so set a negative value to decrease health.
     /// </summary>
-    public _DamageableIncreaseHealth OnLaserHitDamageable 
-    { 
-        get {
-            return damageableIncreaseHealth;
-         } 
-        set {
-            damageableIncreaseHealth = value;
-        } 
-    }
-    #endregion
+    float DamagePower = -1;
 
     InputManager inputManager;
     InputAction Fire;
@@ -79,8 +67,7 @@ public class LaserMaker : MonoBehaviour
                             IDamageable damageable;
                             if(hit.transform.TryGetComponent<IDamageable>(out damageable))
                             {
-                                print(hit.transform.gameObject.layer);
-                                damageable.IncreaseHealth(OnLaserHitDamageable());
+                                damageable.IncreaseHealth(DamagePower);
                             }
                         }
 
